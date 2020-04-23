@@ -47,5 +47,6 @@
 	(setq exec-path (append '("/usr/local/go/bin") exec-path))
 	(setenv "PATH" (concat "/Users/yunsong/Work/go/bin:/usr/local/go/bin" ":" (getenv "PATH")))
 	  
-  5. Restart emacs, and open a .go file. Try 'C-c C-d', 'C-c C-j', 'M-x go-guru-callers'
+  5. RESTART emacs, then open a .go file.
+	 Try 'C-c C-d', 'C-c C-j', 'M-x go-guru-callers'
   6. If anything failed, check out the lsp-stderr buffer 'M-x M-b'
