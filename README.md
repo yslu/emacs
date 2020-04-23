@@ -1,9 +1,10 @@
-# emacs
-  It's been pretty painful adding Golang support in emacs, and those "helpful"
-  articles were with some strong assumptions or out-of-date.
+# .emacs
+  It's been pretty painful adding Golang support to emacs, and those "helpful"
+  articles were based on strong assumptions and sometimes outdated.
+
   Thus, I'd list the steps setting up go-mode for emacs. Mostly focusing on
-  those necessary steps with reasons
-  
+  those necessary steps.
+
 ## References
   Though you can look at README files of these projects, you may fail multiple
   times when trying them out. I still list them here for your reference. Open
@@ -21,8 +22,10 @@
   1. Emacs should be the latest version on your system. Please try to update it
   to save your time in the future.
   2. Install the latest versions of MELPA Packages: 'go-guru', 'go-mode', 'lsp-mode'
-	 In case you already installed these packages, check their versions. Use
-	 the latest versions from MELPA. DO NOT waste your time with old versions.
+
+    In case you already installed these packages, check their versions. Use the latest
+    versions from MELPA. DO NOT waste your time with old versions.
+  
   3. Install Golang packages:
 	 - gopls: 
 	 ```sh
@@ -37,7 +40,8 @@
   
   	;; use lsp-mode with gopls as backend
 	(add-hook 'go-mode-hook 'lsp-deferred)
-   	;; Add $GOROOT and $GOPATH to exec-path and $PATH
+
+	;; Add $GOROOT and $GOPATH to exec-path and $PATH
 	;; When emacs is not started from a shell, these are required to enable gopls, godef, etc.
 	(setq exec-path (append '("/Users/yunsong/Work/go/bin") exec-path))
 	(setq exec-path (append '("/usr/local/go/bin") exec-path))
