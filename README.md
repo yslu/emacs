@@ -5,9 +5,9 @@
   those necessary steps with reasons
   
 ## References
-	Though you can look at README files of these projects, you may fail multiple
-	times when trying them out. I still list them here for your reference. Open
-	the links in new tabs in case you need to take a close look.
+  Though you can look at README files of these projects, you may fail multiple
+  times when trying them out. I still list them here for your reference. Open
+  the links in new tabs in case you need to take a close look.
   1. 'go-mode' can be found at: https://github.com/dominikh/go-mode.el
   2. 'lsp-mode' is at: https://github.com/emacs-lsp/lsp-mode
   3. 'gopls' is at: https://github.com/golang/tools/blob/master/gopls/doc/emacs.md
@@ -16,7 +16,7 @@
   Use ONLY those mainstream suports if possible.
   
 ## Installations
-	Understand these steps before you start.
+  Understand these steps before you start.
 	
   1. Emacs should be the latest version on your system. Please try to update it
   to save your time in the future.
@@ -34,13 +34,14 @@
 	 ```
   4. Update your .emacs file. Read the emacs file in this repo and copy the following
   sections to your .emacs file under your home directory.
-	  ;; use lsp-mode with gopls as backend
-	  (add-hook 'go-mode-hook 'lsp-deferred)
-   	  ;; Add $GOROOT and $GOPATH to exec-path and $PATH
-	  ;; When emacs is not started from a shell, these are required to enable gopls, godef, etc.
-	  (setq exec-path (append '("/Users/yunsong/Work/go/bin") exec-path))
-	  (setq exec-path (append '("/usr/local/go/bin") exec-path))
-	  (setenv "PATH" (concat "/Users/yunsong/Work/go/bin:/usr/local/go/bin" ":" (getenv "PATH")))
+  
+  	;; use lsp-mode with gopls as backend
+	(add-hook 'go-mode-hook 'lsp-deferred)
+   	;; Add $GOROOT and $GOPATH to exec-path and $PATH
+	;; When emacs is not started from a shell, these are required to enable gopls, godef, etc.
+	(setq exec-path (append '("/Users/yunsong/Work/go/bin") exec-path))
+	(setq exec-path (append '("/usr/local/go/bin") exec-path))
+	(setenv "PATH" (concat "/Users/yunsong/Work/go/bin:/usr/local/go/bin" ":" (getenv "PATH")))
 	  
   5. Restart emacs, and open a .go file. Try 'C-c C-d', 'C-c C-j', 'M-x go-guru-callers'
   6. If anything failed, check out the lsp-stderr buffer 'M-x M-b'
